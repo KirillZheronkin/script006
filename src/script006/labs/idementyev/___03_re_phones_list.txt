@@ -1,0 +1,11 @@
+from given list filter all Russian cell-phone numbers
+ +79236765O97 # no
+ 89136645101 # yes
+ 83812640423 # no
+ 8(904)541-02-03 #yes
+ +1(555)345-11-21 # no
+ +8(3812) 360-263 # no
+ 904-333-22-12 # yes
+ 9333026455 # yes
+
+ +7 921 1234567 # yes

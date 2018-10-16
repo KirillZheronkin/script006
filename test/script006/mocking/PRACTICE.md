@@ -1,0 +1,1 @@
+1. Create function for writing text into file. Test it without making of real file.
