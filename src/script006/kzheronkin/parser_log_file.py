@@ -22,10 +22,12 @@ def gen_file_lines(file_name, number_lines_to_read):
 
 
 class LinesContainer:
-    n = 5000
+    n = 500
 
     def __init__(self, file_name):
         self.line_list = [line for line in gen_file_lines(file_name, self.n)]
+        #self.line_list = file_name.readlines()
+
         self.chunk_size = len(self.line_list)
         self.is_last_chunk = (self.chunk_size != self.n)
 
@@ -74,14 +76,14 @@ def parse_log_file(file_name):
             read_chunk = LinesContainer(log_file)
             file_statistics.check_file_chunk(read_chunk)
 
-        return file_statistics
+        return file_statistics, file_statistics.get_sorted_list()
 
 
 if __name__ == "__main__":
     execution_time, url_stat_dict = parse_log_file("logfile.log")
-    for value in url_stat_dict.get_sorted_list()[0:5]:
+    for value in url_stat_dict[1][0:5]:
         print(value)
 
-    print("Number of bad points {}".format(url_stat_dict.bad_string_counter))
+    print("Number of bad points {}".format(url_stat_dict[0].bad_string_counter))
     print("The function worked {} sec".format(execution_time))
 
