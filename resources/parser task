@@ -1,0 +1,7 @@
+1) parse logfile
+2) find unique urls
+3) count number of requests for every url from p2
+4) sort list of unique urls by popularity
+
+sample of logs
+https://pastebin.com/9m1GVPWQ

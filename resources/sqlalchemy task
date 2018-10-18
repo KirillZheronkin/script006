@@ -1,0 +1,7 @@
+1) create new migration structure with alembic
+2) create table user(id integer primary key, login string , password string)
+in first migration
+3) Update table user with column creation_date TIMESTAMP
+4) with sqlalchemy create 3 random users
+5) in separate session get theese 3 users sorted by creation_date
+

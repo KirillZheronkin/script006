@@ -1,17 +1,21 @@
 import logging
+import logsettings
 
-def get_configured_logger():
-    logFormatter = logging.Formatter("%(asctime)s %(name)s:%(levelname)s:: %(message)s")
-    logger = logging.getLogger(__name__)
-    fh = logging.FileHandler("logfile.log")
-    fh.setFormatter(logFormatter)
-    logger.addHandler(fh)
-    sh = logging.StreamHandler()
-    sh.setFormatter(logFormatter)
-    logger.addHandler(sh)
-    logger.setLevel(logging.DEBUG)
-    return logger
+
+# def get_configured_logger(name=__name__):
+#     logFormatter = logging.Formatter(logsettings.LOG_FORMAT)
+#     logger = logging.getLogger(name)
+#     fh = logging.FileHandler(logsettings.LOGFILE)
+#     fh.setFormatter(logFormatter)
+#     logger.addHandler(fh)
+#     sh = logging.StreamHandler()
+#     sh.setFormatter(logFormatter)
+#     logger.addHandler(sh)
+#     logger.setLevel(logsettings.LOGLEVEL)
+#     return logger
 
 if __name__ == '__main__':
-    l = get_configured_logger()
-    l.info("Testing log messages")
+    # l = get_configured_logger("logexample")
+    # l.info("Testing log messages")
+    logging.debug("Test log output from logging")
+    logging.basicConfig()

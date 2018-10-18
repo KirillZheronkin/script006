@@ -1,0 +1,8 @@
+1) read logfile in chunks
+2) grab all urls
+3) write urls into sqlite with sqlalchemy; if url cant be parsed,
+write source logline into another table
+4) get statistics by popularity from database using sqlalchemy
+
+sample of logs
+https://pastebin.com/9m1GVPWQ

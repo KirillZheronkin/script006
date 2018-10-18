@@ -3,7 +3,11 @@ from  time import  sleep
 
 def threaded(f):
     def wrapper(*args, **kwargs):
-        t = threading.Thread(target=f, args=args, kwargs=kwargs, daemon=True)
+        t = threading.Thread(
+            target=f,
+            args=args,
+            kwargs=kwargs,
+)
         t.start()
         return t
     return wrapper
@@ -15,12 +19,13 @@ def func1():
     while True:
         print("imalive!!!!")
         sleep(3)
+        print(threading.enumerate())
 
 
 if __name__ == '__main__':
     result = func1()
     print("result is {} {}".format(type(result), result))
-    counter = 3
+    counter = 1
     while counter:
         sleep(3)
         print(result)

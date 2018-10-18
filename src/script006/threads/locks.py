@@ -1,4 +1,11 @@
 from threading import Lock, Thread
+from time import sleep
+
+@threaded
+def function1():
+    while True:
+        print("im alive")
+        sleep(3)
 
 
 def add_one(lock):
@@ -15,12 +22,16 @@ def add_two(lock):
 
 
 if __name__ == '__main__':
-    lock = Lock()
-    g = 0
-    threads = []
-    for func in [add_one, add_two]:
-        threads.append(Thread(target=func, args=(lock,)))
-        threads[-1].start()
+    t = function1()
 
-    [t.join() for t in threads]
-    print(g)
+    # lock = Lock()
+    # g = 0
+    # threads = []
+    # for func in [add_one, add_two]:
+    #     t = Thread(target=func, args=(lock,))
+    #     # t.is_alive()
+    #     threads.append()
+    #     threads[-1].start()
+    #
+    # [t.join() for t in threads]
+    # print(g)
