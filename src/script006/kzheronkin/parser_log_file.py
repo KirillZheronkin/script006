@@ -13,12 +13,12 @@ def time_measure(f):
 
 
 def gen_file_lines(file_name, number_lines_to_read):
-    for i in range(number_lines_to_read):
-        read_line = file_name.readline()
-        if read_line:
+    try:
+        for i in range(number_lines_to_read):
+            read_line = next(file_name)
             yield read_line
-        else:
-            break
+    except StopIteration:
+        pass
 
 
 class LinesContainer:
